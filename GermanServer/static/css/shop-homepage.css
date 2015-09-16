@@ -6,6 +6,7 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    color: #022e19
 }
 
 .slide-image {
@@ -13,12 +14,13 @@ body {
 }
 
 .carousel-holder {
+	color: #022e19
     margin-bottom: 30px;
 }
-
-.carousel-control,
-.item {
-    border-radius: 4px;
+.navbar-heades {
+	border-top-color: #999;
+	border-bottom-color: #999;
+	color: #022e19
 }
 
 .caption {
@@ -37,7 +39,7 @@ body {
 .ratings {
     padding-right: 10px;
     padding-left: 10px;
-    color: #d17581;
+    color: #024828;
 }
 
 .thumbnail {
@@ -46,7 +48,7 @@ body {
 
 .thumbnail .caption-full {
     padding: 9px;
-    color: #333;
+    color: #024828;
 }
 
 footer {

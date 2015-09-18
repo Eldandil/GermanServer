@@ -42,6 +42,71 @@ def get_experience(experience_id):
 		returnData.append(experience)
 	con.close()
 	return jsonify({'experiences': returnData})
+##
+## Get experience by username
+##	
+@app.route('/clipcultexperiences/api/v1.0/experiences/user/<string:username>', methods=['GET'])
+def get_experience_user(username):
+	con = engine.connect()
+	result = con.execute("select * from mark where user =\"" + str(username) + "\"")
+	returnData = []
+	for row in result:
+		experience = {
+		'id': row["id"],
+        'title': row["title"],
+        'link': row["link"], 
+        'desc': row["description"],
+		'lat': row["latitude"],
+		'lng': row["longitude"],
+		'user': row["user"]
+		}
+		returnData.append(experience)
+	con.close()
+	return jsonify({'experiences': returnData})
+	
+##
+## Get experience by video id
+##	
+@app.route('/clipcultexperiences/api/v1.0/experiences/id/<string:video_id>', methods=['GET'])
+def get_experience_video_id(video_id):
+	con = engine.connect()
+	result = con.execute("select * from mark where id =\"" + str(video_id) + "\"")
+	returnData = []
+	for row in result:
+		experience = {
+		'id': row["id"],
+        'title': row["title"],
+        'link': row["link"], 
+        'desc': row["description"],
+		'lat': row["latitude"],
+		'lng': row["longitude"],
+		'user': row["user"]
+		}
+		returnData.append(experience)
+	con.close()
+	return jsonify({'experiences': returnData})
+	
+##
+## Get experience by video id
+##	
+@app.route('/clipcultexperiences/api/v1.0/experiences/title/<string:title>', methods=['GET'])
+def get_experience_video_title(title):
+	con = engine.connect()
+	result = con.execute("select * from mark where title =\"" + str(title) "\"")
+	returnData = []
+	for row in result:
+		experience = {
+		'id': row["id"],
+        'title': row["title"],
+        'link': row["link"], 
+        'desc': row["description"],
+		'lat': row["latitude"],
+		'lng': row["longitude"],
+		'user': row["user"]
+		}
+		returnData.append(experience)
+	con.close()
+	return jsonify({'experiences': returnData})
 
 ##
 ## Get all experiences on BD

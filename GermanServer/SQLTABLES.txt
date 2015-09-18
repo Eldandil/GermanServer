@@ -18,3 +18,12 @@ CREATE TABLE USER(
    primary key (login)
 
 );
+
+CREATE TABLE RATING(
+
+   markid INTEGER,
+   whorated VARCHAR(100),
+   primary key(markid,whorated),
+   FOREIGN KEY (markid) REFERENCES MARK(id),
+   FOREIGN KEY (whorated) REFERENCES USER(login)
+);

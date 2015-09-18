@@ -92,7 +92,7 @@ def get_experience_video_id(video_id):
 @app.route('/clipcultexperiences/api/v1.0/experiences/title/<string:title>', methods=['GET'])
 def get_experience_video_title(title):
 	con = engine.connect()
-	result = con.execute("select * from mark where title =\"" + str(title) "\"")
+	result = con.execute("select * from mark where title =\"" + str(title) + "\"")
 	returnData = []
 	for row in result:
 		experience = {
